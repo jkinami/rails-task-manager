@@ -1,0 +1,21 @@
+<div class="p-2 gap-3">
+
+  <div class="card">
+  <div class="card-header">
+    Task No.<%= @task.id+1 %>
+  </div>
+  <div class="card-body">
+    <%= link_to task_path(@task.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      <i class="fa-regular fa-trash-can"></i>
+    <% end %>
+    <%= link_to edit_task_path(@task.id) do %>
+      <i class="fa-regular fa-pen-to-square"></i>
+    <% end %>
+    <h5 class="card-title"><%= @task.title %></h5>
+
+    <p class="card-text"><%= @task.details %></p>
+    <%= link_to "Go Back", root_path, class: "btn btn-primary" %>
+    <%# <a href="#" class="btn btn-primary">Go back</a> %>
+  </div>
+</div>
+</div>
